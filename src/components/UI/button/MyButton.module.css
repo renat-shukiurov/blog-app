@@ -1,8 +1,14 @@
 .myBtn{
     padding: 5px 15px;
-    color: cornflowerblue;
+    color: #437de3;
     font-size: 14px;
     background: transparent;
-    border: 1px solid cornflowerblue;
+    border: 1px solid #437de3;
     cursor: pointer;
+    transition: background .3s;
+}
+
+.myBtn:hover{
+    background: #437de3;
+    color: #fff;
 }

@@ -22,9 +22,11 @@ function App() {
             setIsAuth,
             isLoading
         }}>
-            <BrowserRouter>
-                <Navbar/>
-                <AppRouter/>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
+                <div className="wrapper">
+                    <Navbar/>
+                    <AppRouter/>
+                </div>
             </BrowserRouter>
         </AuthContext.Provider>
 

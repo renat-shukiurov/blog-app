@@ -24,27 +24,30 @@ const params = useParams();
     }, [])
 
     return (
-        <div>
-            <h1>Page of post ID = {params.id}</h1>
+        <div className='post-id content'>
+            <h1>{post.title}</h1>
             {isLoading
                 ? <Loader/>
-                : <div>{post.id} . {post.title}</div>
-            }
-            <h1>Comments: </h1>
-            {isComLoading
-                ? <Loader/>
-                : <div>
-                    {comments.map(c =>
-                        <div key={uuidv4()} style={{marginTop: "15px"}}>
-                            <h3>{c.name}</h3>
-                            <p>{c.body}</p>
-                            <p>By {c.email}</p>
-                        </div>
-                    )
+                : <>
+                    <div className='text-content'>{post.body}</div>
+                    <h4>Comments: </h4>
+                    {isComLoading
+                        ? <Loader/>
+                        : <div className='comments'>
+                            {comments.map(c =>
+                                <div className="comment-block" key={uuidv4()} style={{marginTop: "15px"}}>
+                                    <h5>{c.name}</h5>
+                                    <p>{c.body}</p>
+                                    <p><b>By {c.email}</b></p>
+                                </div>
+                            )
 
+                            }
+                        </div>
                     }
-                </div>
+                </>
             }
+
         </div>
     );
 };

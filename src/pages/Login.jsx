@@ -12,7 +12,7 @@ const Login = () => {
         localStorage.setItem('auth', "true")
     }
     return (
-        <div>
+        <div className="login">
             <h1>Login page</h1>
             <form onSubmit={login}>
                 <MyInput type="text" placeholder="Login ..."/>

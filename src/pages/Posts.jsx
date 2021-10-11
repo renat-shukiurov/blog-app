@@ -55,10 +55,10 @@ function Posts() {
     }
 
     return (
-        <div className="App">
+        <div className="App content">
 
-            <MyButton style={{marginTop: "30px"}} onClick={()=>setModal(true)}>
-                Create new user
+            <MyButton onClick={()=>setModal(true)}>
+                Create new post
             </MyButton>
             <MyModal visible={modal} setVisible={setModal}>
                 <PostForm create={createPost}/>
@@ -68,10 +68,10 @@ function Posts() {
             {postError &&
                 <h1>Something went wrong {postError}</h1>
             }
+            <span>Items on page: </span>
             <MySelect
                 value={limit}
                 onChange={value => setLimit(value)}
-                defaultValue="Items on page"
                 options={[
                     {value: 5, name:"5"},
                     {value: 10, name:"10"},
